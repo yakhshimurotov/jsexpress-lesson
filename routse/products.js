@@ -6,11 +6,15 @@ router.get("/", (req, res) => {
 });
 
 router.get("/products", (req, res) => {
-	res.render("products");
+	res.render("products", {
+		isProducts: true,
+	})
 });
 
 router.get("/add", (req, res) => {
-	res.render("add");
+	res.render("add", {
+		isAdd: true,
+	});
 })
 
 export default router;

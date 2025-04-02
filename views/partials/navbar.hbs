@@ -7,13 +7,31 @@
       </div>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        {{#if isProducts}}
+        <li><a href="/products" class="nav-link px-2 link-secondary text-decoration-underline">Products</a></li>
+        {{else}}
         <li><a href="/products" class="nav-link px-2 link-secondary">Products</a></li>
+        {{/if}}
+
+        {{#if isAdd}}
+        <li><a href="/add" class="nav-link px-2 text-decoration-underline">Add</a></li>
+        {{else}}
         <li><a href="/add" class="nav-link px-2">Add</a></li>
+        {{/if}}        
       </ul>
 
       <div class="col-md-3 text-end">
+        {{#if isLogin}}
+        <button type="button" class="btn btn-success me-2 active"><a class="text-light text-decoration-none" href="/login">Login</a></button>
+        {{else}}
         <button type="button" class="btn btn-success me-2"><a class="text-light text-decoration-none" href="/login">Login</a></button>
+        {{/if}}
+        
+        {{#if isSignup}}
+        <button type="button" class="btn btn-primary active"><a class="text-light text-decoration-none" href="/sign-up">Sign-up</a></button>
+        {{else}}
         <button type="button" class="btn btn-primary"><a class="text-light text-decoration-none" href="/sign-up">Sign-up</a></button>
+        {{/if}}
       </div>
     </header>
   </div>

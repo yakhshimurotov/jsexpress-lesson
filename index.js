@@ -53,10 +53,39 @@
 
 // -------------------------------------------------------------------
 
+// import express from "express";
+// import {create} from "express-handlebars";
+// import authsRouter from "./routse/auth.js";
+// import productsRouter from "./routse/products.js";
+// const app = express();
+
+// const hbs = create({
+// 	defaultLayout: "main",
+// 	extname: "hbs",
+// });
+
+// app.engine("hbs", hbs.engine);
+// app.set("view engine", "hbs");
+// app.set("views", "./views");
+
+// app.use(express.urlencoded({extended: true}));
+// app.use(authsRouter);
+// app.use(productsRouter);
+// app.use(express.static("public"));
+
+
+// const PORT = process.env.PORT || 1000
+// app.listen(PORT, () => {
+// 	console.log(`Server is running ${PORT}`);
+// });
+
+
+// 4 - O'zim yozgan qo'd express JS mustahkamlash uchun
+
 import express from "express";
 import {create} from "express-handlebars";
-import authsRouter from "./routse/auth.js";
-import productsRouter from "./routse/products.js";
+import aouthRouter from "./routse/auth.js";
+import productRouter from "./routse/products.js";
 const app = express();
 
 const hbs = create({
@@ -68,36 +97,13 @@ app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
 app.set("views", "./views");
 
-app.use(express.urlencoded({extended: true}));
-app.use(authsRouter);
-app.use(productsRouter);
-app.use(express.static("public"));
 
+app.use(express.static("public"));
+app.use(express.urlencoded({extended: true}));
+app.use(aouthRouter);
+app.use(productRouter);
 
 const PORT = process.env.PORT || 1000
 app.listen(PORT, () => {
-	console.log(`Server is running ${PORT}`);
+	console.log(`Server is runnning ${PORT}`);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 4 - O'zim yozgan qo'd express JS mustahkamlash uchun
